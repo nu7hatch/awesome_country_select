@@ -1,0 +1,50 @@
+== AwesomeCountrySelect
+
+Provides a advanced helper to get an HTML select list of countries. The list of 
+countries comes from the ISO 3166 standard.  While it is a relatively neutral 
+source of country names, it will still offend some users.
+
+Users are strongly advised to evaluate the suitability of this list given their 
+user base.
+
+== Features
+
+* Additional countries with higher priority
+* Removing specified countries
+* ISO 3166 alpha-2 country code as option value (eg. EN, PL, UA), not name
+* Rest of world (code: ROW)
+* World regions (codes: NAC, EUC, SAC, ASC, AFC, OCC)
+* Native names
+
+== Examples
+
+Simple country select:
+  country_select :user, :country_name
+  
+List with additional countries at the top:
+  country_select :user, :country_name, [['My additional country', 'COUNTRY_CODE']]
+  
+List with removed elements (eg. which are already used):
+  country_select :user, :country_name, nil, %w{EN PL DK} 
+
+List with "Rest of world" region:
+  country_select :user, :country_name, nil, nil, :rest_of_world => true
+  
+List with special regions for each continent:
+  country_select :user, :country_name, nil, nil, :world_regions => true
+  
+Country labels in native language, english or both:
+  country_select :user, :country_name, nil, nil, :labels => :english # default
+  country_select :user, :country_name, nil, nil, :labels => :native  # eg. "Україна", "Polska", etc.
+  country_select :user, :country_name, nil, nil, :labels => :both    # eg. "Ukraine - Україна"
+  
+If you want display country name, you can use:
+  country_name('PL')          # => 'Poland'
+  country_name('UA', :native) # => 'Україна'
+  
+== Copyright
+
+Copyright (c) 2010 Kriss Kowalik, released under the MIT license
+
+Based on Michael Koziarski country_select plugin, modifications inspired by numerous forks of it.
+

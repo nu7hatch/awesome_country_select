@@ -1,0 +1,11 @@
+en:
+  helpers:
+    rest_of_world: Rest of world    
+    world_regions:
+      north_american: North American Countries
+      south_american: South American Countries
+      european: European Countries
+      african: African Countries
+      asian: Asian Countries
+      oceania: Oceania Countries
+

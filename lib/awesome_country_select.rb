@@ -378,7 +378,7 @@ module ISO3166
       "AT" => ["Austria", "Österreich"],
       "GL" => ["Greenland", "Grønland"],
       "NZ" => ["New Zealand", "Aotearoa"],
-      "AU" => ["Australia"],
+      "AU" => ["Australia", nil],
       "GM" => ["Gambia", nil],
       "MG" => ["Madagascar", nil],
       "GN" => ["Guinea", "Guinée"],
